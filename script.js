@@ -35,7 +35,14 @@ addBtn.addEventListener('click', function () {
 // - When clicked, remove the "active" class from all colors and add it to the clicked one.
 // - Update the `modalPriorityColor` with the selected color.
 allPriorityColors.forEach(function (colorElem) {
-  // IMPLEMENT HERE
+  colorElem.addEventListener('click', function () {
+    allPriorityColors.forEach(function (priorityElem) {
+      priorityElem.classList.remove('active');
+    });
+    colorElem.classList.add('active');
+
+    modalPriorityColor = colorElem.classList[0];
+  });
 });
 
 // Task 3: Add tickets using the "Shift" key
